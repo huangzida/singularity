@@ -8,69 +8,68 @@ Singularity Effect - A high-performance singularity background effect built with
 
 ---
 
-### **功能模块**
+### **Features**
 
-- 🚀 **高性能渲染**: 基于 OGL (轻量级 WebGL 库) 构建，确保流畅的视觉体验。
-- 🎨 **高度可定制**: 支持调整色相、速度、亮度、位置、畸变、积聚盘大小、黑洞质量、漩涡细节等多种参数。
-- 🛠️ **内置调试面板**: 提供直观的调试界面，支持实时参数调整与随机化配置。
-- 📦 **易于集成**: 简单易用的 Vue 组件，支持按需引入。
+- 🚀 **High Performance**: Built on OGL (a lightweight WebGL library), ensuring a smooth visual experience.
+- 🎨 **Highly Customizable**: Supports various parameters like hue, speed, brightness, position, distortion, accretion size, black hole mass, and vortex detail.
+- 🛠️ **Built-in Debug Panel**: Intuitive debugging interface for real-time parameter adjustment and configuration randomization.
+- 📦 **Easy Integration**: Simple Vue components with support for on-demand imports.
 
-### **安装方式**
+### **Installation**
 
 ```bash
 pnpm add @bg-effects/singularity ogl
 ```
 
-> **注意**: `ogl` 是 peer dependency，需要手动安装。
+> **Note**: `ogl` is a peer dependency and needs to be installed manually.
 
-### **主要 API**
+### **API**
 
 #### **Props**
 
-| 属性               | 类型       | 默认值      | 说明              |
-| :----------------- | :--------- | :---------- | :---------------- | ---------- | ----------- | -------- |
-| `hue`              | `number`   | `0`         | 色相 (0-360)      |
-| `speed`            | `number`   | `1.0`       | 动画速度          |
-| `brightness`       | `number`   | `1.0`       | 亮度              |
-| `positionX`        | `number`   | `0.5`       | 中心 X 坐标 (0-1) |
-| `positionY`        | `number`   | `0.5`       | 中心 Y 坐标 (0-1) |
-| `distortion`       | `number`   | `0.0`       | 空间畸变程度      |
-| `accretionSize`    | `number`   | `1.2`       | 积聚盘大小        |
-| `blackHoleMass`    | `number`   | `1.0`       | 黑洞质量/引力强度 |
-| `vortexDetail`     | `number`   | `5`         | 漩涡细节等级      |
-| `pulseFrequency`   | `number`   | `1.0`       | 脉冲频率          |
-| `rotationSpeed`    | `number`   | `1.0`       | 旋转速度          |
-| `colorScheme`      | `'classic' | 'mono'      | 'duo'             | 'rainbow'` | `'classic'` | 色彩方案 |
-| `secondaryColor`   | `string`   | `'#00ffff'` | 辅助颜色 (HEX)    |
-| `quantumParticles` | `number`   | `0`         | 量子粒子数量      |
-| `debug`            | `boolean`  | `false`     | 是否开启调试面板  |
-| `lang`             | `'zh-CN'   | 'en'`       | `'zh-CN'`         | UI 语言    |
+| Property | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `hue` | `number` | `0` | Hue adjustment (0-360) |
+| `speed` | `number` | `1.0` | Animation speed |
+| `brightness` | `number` | `1.0` | Brightness level |
+| `positionX` | `number` | `0.5` | Center X coordinate (0-1) |
+| `positionY` | `number` | `0.5` | Center Y coordinate (0-1) |
+| `distortion` | `number` | `0.0` | Spatial distortion level |
+| `accretionSize` | `number` | `1.2` | Accretion disk size |
+| `blackHoleMass` | `number` | `1.0` | Black hole mass / Gravity strength |
+| `vortexDetail` | `number` | `5` | Vortex detail complexity |
+| `pulseFrequency` | `number` | `1.0` | Pulse frequency |
+| `rotationSpeed` | `number` | `1.0` | Rotation speed |
+| `colorScheme` | `'classic' \| 'mono' \| 'duo' \| 'rainbow'` | `'classic'` | Color scheme selection |
+| `secondaryColor` | `string` | `'#00ffff'` | Secondary color (HEX) |
+| `quantumParticles` | `number` | `0` | Number of quantum particles |
+| `debug` | `boolean` | `false` | Enable/disable debug panel |
+| `lang` | `'zh-CN' \| 'en'` | `'zh-CN'` | UI language |
 
-### **使用示例**
+### **Usage**
 
 ```vue
 <script setup>
 import { Singularity } from "@bg-effects/singularity";
-import "@bg-effects/singularity/dist/index.css";
 </script>
 
 <template>
   <div style="width: 100vw; height: 100vh; background: #000;">
-    <Singularity :speed="1.2" :black-hole-mass="1.5" color-scheme="neon" />
+    <Singularity :speed="1.2" :black-hole-mass="1.5" color-scheme="duo" />
   </div>
 </template>
 ```
 
-### **本地开发**
+### **Local Development**
 
 ```bash
-# 安装依赖
+# Install dependencies
 pnpm install
 
-# 启动开发服务器 (Playground)
+# Start development server (Playground)
 pnpm dev
 
-# 构建项目
+# Build project
 pnpm build
 ```
 

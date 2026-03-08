@@ -27,36 +27,35 @@ pnpm add @bg-effects/singularity ogl
 
 #### **属性 (Props)**
 
-| 属性名             | 类型       | 默认值      | 说明              |
-| :----------------- | :--------- | :---------- | :---------------- | ---------- | ----------- | -------- |
-| `hue`              | `number`   | `0`         | 色相 (0-360)      |
-| `speed`            | `number`   | `1.0`       | 动画速度          |
-| `brightness`       | `number`   | `1.0`       | 亮度              |
-| `positionX`        | `number`   | `0.5`       | 中心 X 坐标 (0-1) |
-| `positionY`        | `number`   | `0.5`       | 中心 Y 坐标 (0-1) |
-| `distortion`       | `number`   | `0.0`       | 空间畸变程度      |
-| `accretionSize`    | `number`   | `1.2`       | 积聚盘大小        |
-| `blackHoleMass`    | `number`   | `1.0`       | 黑洞质量/引力强度 |
-| `vortexDetail`     | `number`   | `5`         | 漩涡细节等级      |
-| `pulseFrequency`   | `number`   | `1.0`       | 脉冲频率          |
-| `rotationSpeed`    | `number`   | `1.0`       | 旋转速度          |
-| `colorScheme`      | `'classic' | 'mono'      | 'duo'             | 'rainbow'` | `'classic'` | 色彩方案 |
-| `secondaryColor`   | `string`   | `'#00ffff'` | 辅助颜色 (HEX)    |
-| `quantumParticles` | `number`   | `0`         | 量子粒子数量      |
-| `debug`            | `boolean`  | `false`     | 是否开启调试面板  |
-| `lang`             | `'zh-CN'   | 'en'`       | `'zh-CN'`         | UI 语言    |
+| 属性名 | 类型 | 默认值 | 说明 |
+| :--- | :--- | :--- | :--- |
+| `hue` | `number` | `0` | 色相 (0-360) |
+| `speed` | `number` | `1.0` | 动画速度 |
+| `brightness` | `number` | `1.0` | 亮度 |
+| `positionX` | `number` | `0.5` | 中心 X 坐标 (0-1) |
+| `positionY` | `number` | `0.5` | 中心 Y 坐标 (0-1) |
+| `distortion` | `number` | `0.0` | 空间畸变程度 |
+| `accretionSize` | `number` | `1.2` | 积聚盘大小 |
+| `blackHoleMass` | `number` | `1.0` | 黑洞质量/引力强度 |
+| `vortexDetail` | `number` | `5` | 漩涡细节等级 |
+| `pulseFrequency` | `number` | `1.0` | 脉冲频率 |
+| `rotationSpeed` | `number` | `1.0` | 旋转速度 |
+| `colorScheme` | `'classic' \| 'mono' \| 'duo' \| 'rainbow'` | `'classic'` | 色彩方案 |
+| `secondaryColor` | `string` | `'#00ffff'` | 辅助颜色 (HEX) |
+| `quantumParticles` | `number` | `0` | 量子粒子数量 |
+| `debug` | `boolean` | `false` | 是否开启调试面板 |
+| `lang` | `'zh-CN' \| 'en'` | `'zh-CN'` | UI 语言 |
 
 ### **使用示例**
 
 ```vue
 <script setup>
 import { Singularity } from "@bg-effects/singularity";
-import "@bg-effects/singularity/dist/index.css";
 </script>
 
 <template>
   <div style="width: 100vw; height: 100vh; background: #000;">
-    <Singularity :speed="1.2" :black-hole-mass="1.5" color-scheme="neon" />
+    <Singularity :speed="1.2" :black-hole-mass="1.5" color-scheme="duo" />
   </div>
 </template>
 ```
