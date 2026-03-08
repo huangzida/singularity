@@ -1,77 +1,79 @@
-# @bg-effects/fireworks
+# @bg-effects/singularity
 
 [English](./README.md) | [简体中文](./README_CN.md)
 
-A high-performance fireworks background effect built with OGL and Vue.
+Singularity Effect - A high-performance singularity background effect built with OGL and Vue.
 
-[Live Demo](https://huangzida.github.io/fireworks/)
+[Live Demo](https://huangzida.github.io/singularity/)
 
 ---
 
-### Features
+### **功能模块**
 
-- 🚀 **High Performance**: Built with OGL (a lightweight WebGL library) for smooth rendering.
-- 🎨 **Highly Customizable**: Multiple shapes (heart, star, butterfly, etc.), launch modes, and color options.
-- 🛠️ **Debug Mode**: Built-in visual debug panel for real-time adjustments.
-- 📦 **Ready to Use**: Easy-to-use Vue component with simple configuration.
+- 🚀 **高性能渲染**: 基于 OGL (轻量级 WebGL 库) 构建，确保流畅的视觉体验。
+- 🎨 **高度可定制**: 支持调整色相、速度、亮度、位置、畸变、积聚盘大小、黑洞质量、漩涡细节等多种参数。
+- 🛠️ **内置调试面板**: 提供直观的调试界面，支持实时参数调整与随机化配置。
+- 📦 **易于集成**: 简单易用的 Vue 组件，支持按需引入。
 
-### Installation
+### **安装方式**
 
 ```bash
-pnpm add @bg-effects/fireworks ogl
+pnpm add @bg-effects/singularity ogl
 ```
 
-> **Note**: `ogl` is a peer dependency and needs to be installed manually.
+> **注意**: `ogl` 是 peer dependency，需要手动安装。
 
-### Usage
+### **主要 API**
+
+#### **Props**
+
+| 属性               | 类型       | 默认值      | 说明              |
+| :----------------- | :--------- | :---------- | :---------------- | ---------- | ----------- | -------- |
+| `hue`              | `number`   | `0`         | 色相 (0-360)      |
+| `speed`            | `number`   | `1.0`       | 动画速度          |
+| `brightness`       | `number`   | `1.0`       | 亮度              |
+| `positionX`        | `number`   | `0.5`       | 中心 X 坐标 (0-1) |
+| `positionY`        | `number`   | `0.5`       | 中心 Y 坐标 (0-1) |
+| `distortion`       | `number`   | `0.0`       | 空间畸变程度      |
+| `accretionSize`    | `number`   | `1.2`       | 积聚盘大小        |
+| `blackHoleMass`    | `number`   | `1.0`       | 黑洞质量/引力强度 |
+| `vortexDetail`     | `number`   | `5`         | 漩涡细节等级      |
+| `pulseFrequency`   | `number`   | `1.0`       | 脉冲频率          |
+| `rotationSpeed`    | `number`   | `1.0`       | 旋转速度          |
+| `colorScheme`      | `'classic' | 'mono'      | 'duo'             | 'rainbow'` | `'classic'` | 色彩方案 |
+| `secondaryColor`   | `string`   | `'#00ffff'` | 辅助颜色 (HEX)    |
+| `quantumParticles` | `number`   | `0`         | 量子粒子数量      |
+| `debug`            | `boolean`  | `false`     | 是否开启调试面板  |
+| `lang`             | `'zh-CN'   | 'en'`       | `'zh-CN'`         | UI 语言    |
+
+### **使用示例**
 
 ```vue
 <script setup>
-import { Fireworks } from '@bg-effects/fireworks'
-import '@bg-effects/fireworks/dist/index.css'
+import { Singularity } from "@bg-effects/singularity";
+import "@bg-effects/singularity/dist/index.css";
 </script>
 
 <template>
   <div style="width: 100vw; height: 100vh; background: #000;">
-    <Fireworks 
-      :firework-count="50"
-      shape="heart"
-      color-mode="multi"
-    />
+    <Singularity :speed="1.2" :black-hole-mass="1.5" color-scheme="neon" />
   </div>
 </template>
 ```
 
-### Props
-
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `firework-count` | `number` | `30` | Number of fireworks |
-| `speed` | `number` | `1.0` | Animation speed |
-| `size` | `number` | `2.0` | Particle size |
-| `shape` | `string` | `'normal'` | Firework shape (see below) |
-| `launch-mode` | `string` | `'random'` | Launch mode (see below) |
-| `color-mode` | `string` | `'multi'` | Color mode (`'single'` or `'multi'`) |
-| `color` | `string` | `'#ff0000'` | Color when color mode is `'single'` |
-| `debug` | `boolean` | `false` | Enable debug panel |
-| `lang` | `'zh-CN' \| 'en'` | `'zh-CN'` | UI language |
-
-#### Supported Shapes (`shape`)
-`normal`, `circular`, `heart`, `star`, `butterfly`, `spiral`, `ring`, `doubleRing`, `atom`, `trefoil`, `clover`, `cross`, `saturn`, `hexagram`, `astroid`, `gear`, `fermat`, `folium`, `random`
-
-#### Launch Modes (`launchMode`)
-`random`, `burst`, `wave`, `tide`, `simultaneous`, `pendulum`
-
-### Local Development
+### **本地开发**
 
 ```bash
-# Install dependencies
+# 安装依赖
 pnpm install
 
-# Start development server
+# 启动开发服务器 (Playground)
 pnpm dev
+
+# 构建项目
+pnpm build
 ```
 
-### License
+### **License**
 
 MIT

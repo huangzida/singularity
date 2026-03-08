@@ -1,0 +1,41 @@
+{
+  "title": "调试面板",
+  "tabs": {
+    "basic": "基础",
+    "visual": "视觉",
+    "dynamics": "动态",
+    "artistic": "艺术"
+  },
+  "subtabs": {
+    "basic": "基础",
+    "colors": "颜色",
+    "visual": "视觉",
+    "advanced": "高级"
+  },
+  "labels": {
+    "hue": "色调",
+    "speed": "速度",
+    "brightness": "亮度",
+    "positionX": "位置 X",
+    "positionY": "位置 Y",
+    "distortion": "扭曲强度",
+    "accretionSize": "吸积盘大小",
+    "blackHoleMass": "黑洞大小",
+    "vortexDetail": "涡流细节",
+    "glowIntensity": "辉光强度",
+    "pulseFrequency": "脉动频率",
+    "rotationSpeed": "旋转速度",
+    "rotationX": "X轴倾角",
+    "rotationY": "Y轴倾角",
+    "mouseResponse": "鼠标响应",
+    "colorScheme": "颜色方案",
+    "secondaryColor": "次要颜色",
+    "quantumParticles": "量子粒子数量"
+  },
+  "colorSchemes": {
+    "classic": "经典",
+    "mono": "单色",
+    "duo": "双色",
+    "rainbow": "彩虹"
+  }
+}

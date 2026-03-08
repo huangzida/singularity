@@ -1,0 +1,41 @@
+{
+  "title": "Debug Panel",
+  "tabs": {
+    "basic": "Basic",
+    "visual": "Visual",
+    "dynamics": "Dynamics",
+    "artistic": "Artistic"
+  },
+  "subtabs": {
+    "basic": "Basic",
+    "colors": "Colors",
+    "visual": "Visual",
+    "advanced": "Advanced"
+  },
+  "labels": {
+    "hue": "Hue",
+    "speed": "Speed",
+    "brightness": "Brightness",
+    "positionX": "Position X",
+    "positionY": "Position Y",
+    "distortion": "Distortion",
+    "accretionSize": "Accretion Size",
+    "blackHoleMass": "Black Hole Size",
+    "vortexDetail": "Vortex Detail",
+    "glowIntensity": "Glow Intensity",
+    "pulseFrequency": "Pulse Frequency",
+    "rotationSpeed": "Rotation Speed",
+    "rotationX": "Tilt X",
+    "rotationY": "Tilt Y",
+    "mouseResponse": "Mouse Response",
+    "colorScheme": "Color Scheme",
+    "secondaryColor": "Secondary Color",
+    "quantumParticles": "Quantum Particles"
+  },
+  "colorSchemes": {
+    "classic": "Classic",
+    "mono": "Monochrome",
+    "duo": "Duotone",
+    "rainbow": "Rainbow"
+  }
+}

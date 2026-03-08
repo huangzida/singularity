@@ -1,58 +1,63 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { fileURLToPath } from 'url'
-import dts from 'vite-plugin-dts'
-import UnoCSS from 'unocss/vite'
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { fileURLToPath } from "url";
+import dts from "vite-plugin-dts";
+import UnoCSS from "unocss/vite";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig(({ mode }) => {
-  const isPlayground = mode === 'playground'
+  const isPlayground = mode === "playground";
 
   return {
-    base: isPlayground ? '/star-trails-gl/' : './',
-    root: isPlayground ? 'playground' : '.',
+    base: isPlayground ? "/singularity/" : "./",
+    root: isPlayground ? "playground" : ".",
     plugins: [
       vue(),
       UnoCSS({
-        mode: 'vue-scoped',
+        mode: "vue-scoped",
       }),
       cssInjectedByJsPlugin(),
-      !isPlayground && dts({
-        tsconfigPath: './tsconfig.json',
-        rollupTypes: true,
-      }),
+      !isPlayground &&
+        dts({
+          tsconfigPath: "./tsconfig.json",
+          rollupTypes: true,
+        }),
     ].filter(Boolean),
-    assetsInclude: ['**/*.glsl'],
+    assetsInclude: ["**/*.glsl"],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
-      }
-    },
-    build: isPlayground ? {
-      outDir: '../dist-play',
-      emptyOutDir: true,
-    } : {
-      lib: {
-        entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
-        name: 'BgEffectsStarTrailsGL',
-        formats: ['es', 'umd'],
-        fileName: (format) => `index.${format === 'es' ? 'js' : 'umd.cjs'}`,
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
       },
-      rollupOptions: {
-        external: ['vue', 'ogl'],
-        output: {
-          globals: {
-            vue: 'Vue',
-            ogl: 'OGL',
+    },
+    build: isPlayground
+      ? {
+          outDir: "../dist-play",
+          emptyOutDir: true,
+        }
+      : {
+          lib: {
+            entry: fileURLToPath(new URL("./src/index.ts", import.meta.url)),
+            name: "BgEffectsSingularity",
+            formats: ["es", "umd"],
+            fileName: (format) => `index.${format === "es" ? "js" : "umd.cjs"}`,
+          },
+          rollupOptions: {
+            external: ["vue", "ogl"],
+            output: {
+              globals: {
+                vue: "Vue",
+                ogl: "OGL",
+              },
+            },
           },
         },
-      },
-    },
-    server: isPlayground ? {
-      port: 5174,
-      fs: {
-        allow: ['..']
-      }
-    } : undefined
-  }
-})
+    server: isPlayground
+      ? {
+          port: 5174,
+          fs: {
+            allow: [".."],
+          },
+        }
+      : undefined,
+  };
+});

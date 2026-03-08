@@ -5,7 +5,7 @@ import {
   presetIcons,
   transformerDirectives,
   transformerVariantGroup,
-} from 'unocss'
+} from "unocss";
 
 export default defineConfig({
   presets: [
@@ -16,15 +16,10 @@ export default defineConfig({
       warn: true,
     }),
   ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-  ],
+  transformers: [transformerDirectives(), transformerVariantGroup()],
   content: {
     pipeline: {
-      include: [
-        /\.(vue|ts)($|\?)/,
-      ],
+      include: [/\.(vue|ts)($|\?)/],
     },
   },
-})
+});
