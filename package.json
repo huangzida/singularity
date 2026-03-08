@@ -1,6 +1,6 @@
 {
   "name": "@bg-effects/singularity",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "packageManager": "pnpm@10.25.0",
   "description": "Singularity Effect - A high-performance singularity background effect built with OGL and Vue.",
